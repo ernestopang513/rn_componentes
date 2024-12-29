@@ -1,6 +1,8 @@
 
 import { useRef } from "react"
 import { Animated, PanResponder, StyleSheet, Text, View } from "react-native"
+import { PanGesture } from "react-native-gesture-handler";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 
 
@@ -16,7 +18,9 @@ export const Animation102Screen = () => {
         dx: cordinates.x,
         dy: cordinates.y,
       },
-    ]),
+    ],{
+      useNativeDriver: false,
+    }),
     onPanResponderRelease: () => {
       Animated.spring(
         cordinates,
@@ -25,19 +29,23 @@ export const Animation102Screen = () => {
             x:0,
             y:0,
           },
-          useNativeDriver: true
+          useNativeDriver: false
         },
       ).start()
     },
   });
 
   return (
-    <View style={styles.container}>
+    <SafeAreaProvider>
+    <SafeAreaView style={styles.container}>
         <Animated.View 
           {...handlerTranslate.panHandlers}
+          // style={[{transform: [{translateX: cordinates.x}, {translateY: cordinates.y}]}, styles.box]} 
           style={[cordinates.getLayout(), styles.box]} 
           />
-    </View>
+    </SafeAreaView>
+    </SafeAreaProvider>
+
   )
 }
 
