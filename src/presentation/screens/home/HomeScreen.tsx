@@ -64,68 +64,68 @@ const uiMenuItems = [
         name: 'Switches',
         icon: 'toggle-outline',
         component: 'SwitchScreen',
-      },
-      {
+    },
+    {
         name: 'Alerts',
         icon: 'alert-circle-outline',
         component: 'AlertScreen',
-      },
-      {
+    },
+    {
         name: 'TextInputs',
         icon: 'document-text-outline',
         component: 'TextInputScreen',
-      },
+    },
 ]
 
 export const HomeScreen = () => {
-  return (
-    <View style={[globalStyles.mainContainer]}>
-        <View style={[globalStyles.globalMargin]}>
-            <ScrollView>
+    return (
+        <View style={[globalStyles.mainContainer]}>
+            <View style={[globalStyles.globalMargin]}>
+                <ScrollView>
 
-                <Title text="Opciones del menú" />
+                    <Title text="Opciones del menú" />
 
-                <View style={{marginTop: 20}} />
+                    <View style={{ marginTop: 20 }} />
 
-                {
-                    animationsItems.map( (item,index) => (
-                        <MenuItem 
-                            key={item.component}  
-                            {...item}  
-                            isFirst={index === 0}
-                            isLast = {index === animationsItems.length - 1}
-                        />
-                    ))
-                }
+                    {
+                        animationsItems.map((item, index) => (
+                            <MenuItem
+                                key={item.component}
+                                {...item}
+                                isFirst={index === 0}
+                                isLast={index === animationsItems.length - 1}
+                            />
+                        ))
+                    }
 
-                <View style={{marginTop: 30}} />
-                
-                {
-                    menuItems.map( (item,index) => (
-                        <MenuItem 
-                            key={item.component}  
-                            {...item}  
-                            isFirst={index === 0}
-                            isLast = {index === menuItems.length - 1}
-                        />
-                    ))
-                }
+                    <View style={{ marginTop: 30 }} />
 
-                <View style={{marginTop: 30}} />
+                    {
+                        menuItems.map((item, index) => (
+                            <MenuItem
+                                key={item.component}
+                                {...item}
+                                isFirst={index === 0}
+                                isLast={index === menuItems.length - 1}
+                            />
+                        ))
+                    }
 
-                {
-                    uiMenuItems.map( (item,index) => (
-                        <MenuItem 
-                            key={item.component}  
-                            {...item}  
-                            isFirst={index === 0}
-                            isLast = {index === uiMenuItems.length - 1}
-                        />
-                    ))
-                }
+                    <View style={{ marginTop: 30 }} />
 
-            </ScrollView>
+                    {
+                        uiMenuItems.map((item, index) => (
+                            <MenuItem
+                                key={item.component}
+                                {...item}
+                                isFirst={index === 0}
+                                isLast={index === uiMenuItems.length - 1}
+                            />
+                        ))
+                    }
+
+                </ScrollView>
+            </View>
         </View>
-    </View>
-  )
+    )
 }

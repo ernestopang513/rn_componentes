@@ -20,34 +20,34 @@ export const SwitchScreen = () => {
     
 
   return (
-    <CustomView style={{marginTop: 100,paddingHorizontal: 10}}>
-       <Card>
-        
+    <CustomView style={{ marginTop: 100, paddingHorizontal: 10 }}>
+      <Card>
+
         <CustomSwitch
           isOn={state.isActive}
-          onChange={value => setState({...state, isActive: value})}
-          text= '¿Esta activo?'
+          onChange={value => setState({ ...state, isActive: value })}
+          text='¿Esta activo?'
         />
 
         <Separator
-          
+
         />
 
         <CustomSwitch
           isOn={state.isHungy}
-          onChange={value => setState({...state, isHungy: value})}
-          text= '¿Tiene hambre?'
+          onChange={value => setState({ ...state, isHungy: value })}
+          text='¿Tiene hambre?'
         />
 
-        <Separator/>
+        <Separator />
 
         <CustomSwitch
           isOn={state.isHappy}
-          onChange={value => setState({...state, isHappy: value})}
-          text= '¿Es feliz?'
+          onChange={value => setState({ ...state, isHappy: value })}
+          text='¿Es feliz?'
         />
 
-       </Card>
+      </Card>
     </CustomView>
   )
 }

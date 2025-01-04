@@ -5,6 +5,7 @@ import { Card } from "../../components/ui/Card"
 import { globalStyles } from "../../../config/theme/theme"
 import { Title } from "../../components/ui/Title"
 import { Button } from "../../components/ui/Button"
+import { CancelStyle, showPrompt, TypeKeyboard } from '../../../config/adapters/prompt.adapter';
 
 
 
@@ -32,6 +33,28 @@ export const AlertScreen = () => {
             },
             { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
+
+    const OnshowPromt = () => {    
+        
+        showPrompt({
+            title: 'Prompt', 
+            msg: 'Mensaje', 
+            onPressOk: (value) => console.log(value), 
+            cancelStyle: CancelStyle.Destructive,
+            placeholder: 'Hola',
+            defaultValue: 'Ernesto',
+            type: TypeKeyboard.Secure
+        })
+        
+        
+        
+        // ! Código nativo
+        // Alert.prompt(
+        //     'Correo electronico',
+        //     'Lorem ipsum dolor sit amet consectetur.',
+        //     (valor: string) => console.log({valor})
+        // )
+    }
   return (
     <CustomView style={[globalStyles.globalMargin, ]}>
         <Title safe text='Alertas'  />
@@ -56,7 +79,7 @@ export const AlertScreen = () => {
             
             <Button 
                 text='Promt - input'
-                onPress={()=>{}}
+                onPress={OnshowPromt}
             />
         </Card>
     </CustomView>

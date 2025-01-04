@@ -7,9 +7,10 @@ interface Props {
     text: string;
     safe?: boolean;
     white?: boolean;
+    centered?: boolean;
 }
 
-export const Title = ({text,safe=false,white = false}: Props) => {
+export const Title = ({text,safe=false,white = false, centered = false}: Props) => {
 
     const {top} = useSafeAreaInsets();
 
@@ -19,8 +20,8 @@ export const Title = ({text,safe=false,white = false}: Props) => {
         ...globalStyles.title,
         marginTop: safe ? top : 0,
         marginBottom: 10,
-        color: white? 'white' : colors.text
-
+        color: white? 'white' : colors.text,
+        textAlign: centered? 'center' : 'auto'
     }}
    >
     {text}
