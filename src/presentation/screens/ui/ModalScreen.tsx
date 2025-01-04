@@ -24,12 +24,12 @@ export const ModalScreen = () => {
 
         <Modal 
           visible={ isVisible }
-          animationType="slide"
+          animationType="fade"
           transparent
         >
             <View style={{backgroundColor: 'rgba(0, 0, 0, 0.1)', flex: 1,}}>
-                <CustomView style={{backgroundColor: 'white',  width: width * 0.6, marginVertical: height * 0.3, alignSelf: "center", borderRadius: 10}}>
-                <View style={{paddingHorizontal: 10, alignSelf: 'center' }}>
+                <CustomView style={{backgroundColor: 'white',  width: width * 0.6, marginVertical: height * 0.35, alignSelf: "center", borderRadius: 10}}>
+                <View style={{ marginVertical: 35 }}>
                 <Title text='Modal content' centered/>
                 </View>
 
