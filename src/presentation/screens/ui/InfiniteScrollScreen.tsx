@@ -2,8 +2,8 @@
 import { useState } from "react"
 import { ActivityIndicator, FlatList, Image, Text, useWindowDimensions, View } from "react-native"
 import { CustomView } from "../../components/ui/CustomView";
-import { Title } from "../../components/ui/Title";
 import { colors } from "../../../config/theme/theme";
+import { FadeInImage } from "../../components/ui/FadeInImage";
 
 
 
@@ -26,7 +26,7 @@ export const InfiniteScrollScreen = () => {
             data ={ numbers }
             onEndReached={loadMore}
             onEndReachedThreshold={0.6}
-            keyExtractor={(item) => item.toString()}
+            keyExtractor={(item, index) => `${item.toString()}-${index}`}
             renderItem = {({item}) => <ListItem number={item} /> }
 
             ListFooterComponent={() => (
@@ -46,12 +46,20 @@ interface ListItemProps {
 
 const ListItem = ({number}: ListItemProps) => {
     return (
-        <Image
-            source={{uri: `https://picsum.photos/id/${number}/500/400`}}
+
+        <FadeInImage
+            uri={ `https://picsum.photos/id/${number + 50}/500/400`}
             style = {{
                 height: 400,
                 width: '100%'
             }}
         />
+        // <Image
+        //     source={{uri: `https://picsum.photos/id/${number + 50}/500/400`}}
+        //     style = {{
+        //         height: 400,
+        //         width: '100%'
+        //     }}
+        // />
     )
 }
