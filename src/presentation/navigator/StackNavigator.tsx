@@ -6,6 +6,7 @@ import { Animation101Screen, Animation102Screen } from "../screens/animations";
 import { SwitchScreen } from "../screens/switches/SwitchScreen";
 import { AlertScreen } from "../screens/alerts/AlertScreen";
 import { TextInputScreen } from "../screens/inputs/TextInputScreen";
+import { ChangeThemeScreen } from "../screens/theme/ChangeThemeScreen";
 import { 
   CustomSectionListScreen, 
   InfiniteScrollScreen,
@@ -35,6 +36,7 @@ export const StackNavigator = () => {
         <Stack.Screen name='ModalScreen' component={ModalScreen}/>
         <Stack.Screen name='InfiniteScrollScreen' component={InfiniteScrollScreen}/>
         <Stack.Screen name='SlidesScreen' component={SlidesScreen}/>
+        <Stack.Screen name='ChangeThemeScreen' component={ChangeThemeScreen}/>
     </Stack.Navigator>
   )
 }
