@@ -1,6 +1,5 @@
 
-import { StyleProp, Text, View, ViewStyle } from "react-native"
-import { colors } from "../../../config/theme/theme"
+import { StyleProp, View, ViewStyle } from "react-native"
 import { useContext } from "react"
 import { ThemeContext } from "../../context/ThemeContext"
 

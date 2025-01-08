@@ -2,7 +2,6 @@
 import React, { useContext } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native"
 import Icon from "@react-native-vector-icons/ionicons";
-// import { Colors } from "react-native/Libraries/NewAppScreen";
 import { useNavigation } from "@react-navigation/native";
 import { Separator } from "./Separator";
 import { ThemeContext } from "../../context/ThemeContext";

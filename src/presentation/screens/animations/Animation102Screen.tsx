@@ -1,8 +1,7 @@
 
 import { useRef } from "react"
 import { Animated, PanResponder, StyleSheet, Text, View } from "react-native"
-import { PanGesture } from "react-native-gesture-handler";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { CustomView } from "../../components/ui/CustomView";
 
 

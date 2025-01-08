@@ -3,7 +3,7 @@ import { CustomView } from "../../components/ui/CustomView"
 import { Title } from "../../components/ui/Title"
 import { Button } from "../../components/ui/Button"
 import { useContext } from "react"
-import { ThemeContext, ThemeProvider } from "../../context/ThemeContext"
+import { ThemeContext } from "../../context/ThemeContext"
 
 
 
@@ -24,6 +24,14 @@ export const ChangeThemeScreen = () => {
         <Button
             text="Dark"
             onPress={()=>setTheme('dark')}
+            styles = { { width: '50%', alignSelf: 'center'}}
+        />
+
+        <View style={{height: 30}} />
+         
+        <Button
+            text="Dark red"
+            onPress={()=>setTheme('redDark')}
             styles = { { width: '50%', alignSelf: 'center'}}
         />
 

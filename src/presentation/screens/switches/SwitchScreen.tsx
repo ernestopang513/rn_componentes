@@ -20,7 +20,7 @@ export const SwitchScreen = () => {
     
 
   return (
-    <CustomView margin style={{ paddingHorizontal: 10 }}>
+    <CustomView margin style={{ paddingHorizontal: 10, marginTop: 20 }}>
       <Card style = {{marginTop: 100}} >
 
         <CustomSwitch

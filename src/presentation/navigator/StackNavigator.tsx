@@ -14,15 +14,22 @@ import {
   PullToRefreshScreen,
   SlidesScreen
 } from "../screens/ui";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 
 const Stack = createStackNavigator();
 
 export const StackNavigator = () => {
+  const {colors} = useContext(ThemeContext)
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyle: {
+          backgroundColor: colors.background,
+          // backgroundColor: 'red',
+        }
       }}
     >
         <Stack.Screen name='Home' component={HomeScreen}/>
