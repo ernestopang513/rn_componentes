@@ -3,14 +3,13 @@ import { CustomView } from "../../components/ui/CustomView"
 import { Title } from "../../components/ui/Title"
 import { Button } from "../../components/ui/Button"
 import { useContext } from "react"
-import { ThemeContext } from "../../context/ThemeContext"
+import { ThemeContext, ThemeProvider } from "../../context/ThemeContext"
 
 
 
 export const ChangeThemeScreen = () => {
 
     const {setTheme, currentTheme, colors} = useContext(ThemeContext)
-
   return (
     <CustomView margin>
         <Title text= {`Cambiar tema: ${currentTheme.toUpperCase()}`} />

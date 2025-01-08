@@ -7,6 +7,8 @@ import { SubTitle } from "../../components/ui/SubTitle";
 import { colors } from "../../../config/theme/theme";
 import { Separator } from "../../components/ui/Separator";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface Houses {
     title: string;
@@ -93,14 +95,15 @@ interface Houses {
 export const CustomSectionListScreen = () => {
     const {height} = useWindowDimensions();
     const {top} = useSafeAreaInsets();
+    const {colors} = useContext(ThemeContext)
   return (
     <CustomView>
         <Title text = 'Lista de personajes' safe />
         <Card>
             <SectionList
                 sections={houses}
-                keyExtractor={item => {console.log(item); return item}}
-                renderItem={({item}) => <Text>{item}</Text>}
+                keyExtractor={item => item}
+                renderItem={({item}) => <Text style={{color: colors.text}}>{item}</Text>}
 
                 renderSectionHeader = {({section})=> <SubTitle text={section.title} backgroundColor={colors.cardBackground} /> }
                 stickySectionHeadersEnabled
@@ -108,7 +111,7 @@ export const CustomSectionListScreen = () => {
                 SectionSeparatorComponent={Separator}
                 ListHeaderComponent={() => < Title text ='Personajes'/>}
                 ListFooterComponent={()=><Title text={`Secciones: ${houses.length}`} />}
-                ListFooterComponentStyle= {{backgroundColor: 'white'}}
+                ListFooterComponentStyle= {{backgroundColor: colors.cardBackground}}
                 showsVerticalScrollIndicator = {false}
 
                 style = {{

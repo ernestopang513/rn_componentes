@@ -3,6 +3,7 @@ import { useRef } from "react"
 import { Animated, PanResponder, StyleSheet, Text, View } from "react-native"
 import { PanGesture } from "react-native-gesture-handler";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { CustomView } from "../../components/ui/CustomView";
 
 
 
@@ -37,13 +38,13 @@ export const Animation102Screen = () => {
 
   return (
     <SafeAreaProvider>
-    <SafeAreaView style={styles.container}>
+    <CustomView style={styles.container}>
         <Animated.View 
           {...handlerTranslate.panHandlers}
           // style={[{transform: [{translateX: cordinates.x}, {translateY: cordinates.y}]}, styles.box]} 
           style={[cordinates.getLayout(), styles.box]} 
           />
-    </SafeAreaView>
+    </CustomView>
     </SafeAreaProvider>
 
   )
